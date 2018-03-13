@@ -1,7 +1,9 @@
 
 import json
 
-leer = json.loads(open('file.json').read())
-
-print leer[0]['isActive']
+def cargar_datos(ruta):
+  with open('file.json').read() as contenido:
+    lineas = json.loads(contenido)
+    for linea in lineas:
+      print(linea)
 
