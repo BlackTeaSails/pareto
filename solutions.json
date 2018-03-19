@@ -1,14 +1,62 @@
 [
     {
         "satisfaction": 100,
-        "effort": 20
+        "effort": 7
     },
     {
         "satisfaction": 80,
-        "effort": 22
+        "effort": 2
     },
     {
-        "satisfaction": 90,
-        "effort": 18
+        "satisfaction": 22,
+        "effort": 8
+    },
+    {
+        "satisfaction": 12,
+        "effort": 1
+    },
+    {
+        "satisfaction": 15,
+        "effort": 3
+    },
+    {
+        "satisfaction": 96,
+        "effort": 2
+    },
+    {
+        "satisfaction": 114,
+        "effort": 9
+    },
+    {
+        "satisfaction": 16,
+        "effort": 10
+    },
+    {
+        "satisfaction": 74,
+        "effort": 4
+    },
+    {
+        "satisfaction": 119,
+        "effort": 7
+    },
+    {
+        "satisfaction": 23,
+        "effort": 5
+    },
+    {
+        "satisfaction": 23,
+        "effort": 6
+    },
+    {
+        "satisfaction": 47,
+        "effort": 3
+    },
+    {
+        "satisfaction": 78,
+        "effort": 11
+    },
+    {
+        "satisfaction": 39,
+        "effort": 5
     }
 ]
