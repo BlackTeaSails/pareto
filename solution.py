@@ -16,6 +16,7 @@ class Solution:
         return "Solution with satisfaction: %d" %self.satisfaction + ", effort: %d" %self.effort + ", and productivity: %d" %self.productivity
 
     def __cmp__( self, other ) :
+        # Da fallo aqui, imagino que por temas de conversion
         if Float(self.productivity) < Float(other.productivity) :
             rst = -1
         elif self.productivity > other.productivity :
