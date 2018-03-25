@@ -1,5 +1,6 @@
 import json
 from solution import Solution
+from operator import attrgetter
 
 def load_solutions(ruta):
   importedSolutions = []
@@ -26,7 +27,14 @@ def getParetoFront(solutions):
 
 def main():
   solutions = load_solutions("solutions.json")
+  for s in solutions:
+    print(s)
+  sorted(solutions, key=attrgetter('productivity'))
+  print("================Ordenadas por productividad============")
+  for s in sorted(solutions, key=attrgetter('productivity')):
+    print(s)
   paretoFront = getParetoFront(solutions)
+  print("================Frente de pareto============")
   for s in paretoFront:
     print(s)
   # then writes the result as another json
