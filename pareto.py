@@ -10,33 +10,25 @@ def load_solutions(ruta):
 
   return importedSolutions
 
-def compararSoluciones(solutions):
-    solucionesPareto = []
-    for solution in solutions:
-        print(solution)
-        aux = solution
-        for solution2 in solutions:
-            # Buscamos las soluciones con el mismo esfuerzo
-            if ((int)solution2.effort == (int)aux.effort) :
-                # Si la nueva solucion tiene mas satisfaccion la añadimos a la comparacion
-                if ((int)solution2.satisfaction > (int)aux.satisfaction)) :
-                    aux = solution2.effort
-        # La solucion con mayor satisfaccion para un esfuerzo, se añade
-        solucionesPareto.append(aux)
-    return solucionesPareto
+def getParetoFront(solutions):
+  paretoDict = {}
+  paretoFront = []
+  for solution in solutions:
+    if not solution.effort in paretoDict:
+      paretoDict[solution.effort] = solution.satisfaction
+      continue
+    if solution.satisfaction > paretoDict[solution.effort]:
+      paretoDict[solution.effort] = solution.satisfaction
+
+  for k,v in paretoDict.items():
+    paretoFront.append(Solution(v, k))
+  return paretoFront
 
 def main():
   solutions = load_solutions("solutions.json")
-  solucionesPareto = []
-  for solution in solutions:
-    print(solution)
-
-  #para ordenar por "productivity"
-  #solutions.sort()
-
-  # analices where the pareto front is
-  solucionesPareto = compararSoluciones(solutions)
-
+  paretoFront = getParetoFront(solutions)
+  for s in paretoFront:
+    print(s)
   # then writes the result as another json
 
 if __name__ == '__main__':
