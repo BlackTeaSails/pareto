@@ -1,9 +1,9 @@
 
 
 class Solution:
-    def __init__(self, satisfaction, effort):
-        self.satisfaction = satisfaction
+    def __init__(self, effort, satisfaction):
         self.effort = effort
+        self.satisfaction = satisfaction
 
     @property
     def productivity(self):

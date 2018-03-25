@@ -6,7 +6,7 @@ def load_solutions(ruta):
   with open(ruta) as content:
     solutions = json.load(content)
     for solution in solutions:
-      importedSolutions.append(Solution(solution["satisfaction"], solution["effort"] ))
+      importedSolutions.append(Solution(solution["effort"], solution["satisfaction"]))
 
   return importedSolutions
 
@@ -21,7 +21,7 @@ def getParetoFront(solutions):
       paretoDict[solution.effort] = solution.satisfaction
 
   for k,v in paretoDict.items():
-    paretoFront.append(Solution(v, k))
+    paretoFront.append(Solution(k, v))
   return paretoFront
 
 def main():
