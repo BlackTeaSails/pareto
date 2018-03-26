@@ -31,9 +31,9 @@ def main():
     print(s)
   sorted(solutions, key=attrgetter('productivity'))
   print("================Ordenadas por productividad============")
-  for s in sorted(solutions, key=attrgetter('productivity')):
+  for s in sorted(solutions, key=attrgetter('effort')):
     print(s)
-  paretoFront = getParetoFront(solutions)
+  paretoFront = sorted(getParetoFront(solutions), key=attrgetter('effort'))
   print("================Frente de pareto============")
   for s in paretoFront:
     print(s)
