@@ -37,6 +37,11 @@ def main():
   print("================Frente de pareto============")
   for s in paretoFront:
     print(s)
+
+  with open('result.json', 'w') as outfile:
+    json.dump([s.__dict__ for s in paretoFront], outfile, indent=4)
+
+
   # then writes the result as another json
 
 if __name__ == '__main__':
